@@ -21,6 +21,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sceneView.autoenablesDefaultLighting = true
+        sceneView.automaticallyUpdatesLighting = true
+        
         // Set the view's delegate
         sceneView.delegate = self
         
@@ -48,6 +51,26 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func didTap(_ gesture: UIGestureRecognizer) {
         if !first {
             if let node = findNode() {
+                
+//                let tapLocation = gesture.location(in: sceneView)
+//                let hitTestResults = sceneView.hitTest(tapLocation, types: .existingPlaneUsingExtent)
+//                
+//                guard let hitTestResult = hitTestResults.first else { return }
+//                let translation = hitTestResult.worldTransform.
+//                let x = translation.x
+//                let y = translation.y
+//                let z = translation.z
+//                
+//                guard let shipScene = SCNScene(named: "ship.scn"),
+//                    let shipNode = shipScene.rootNode.childNode(withName: "ship", recursively: false)
+//                    else { return }
+//                
+//                
+//                shipNode.position = SCNVector3(x,y,z)
+//                sceneView.scene.rootNode.addChildNode(shipNode)
+                
+                
+                
                 self.node = node
             
                 let scene = SCNScene(named: "SceneKit_Scene.scn")!
